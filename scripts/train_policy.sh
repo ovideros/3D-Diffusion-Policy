@@ -14,8 +14,11 @@ task_name=${2}
 config_name=${alg_name}
 addition_info=${3}
 seed=${4}
-exp_name=${task_name}-${alg_name}-${addition_info}
-run_dir="data/outputs/${exp_name}_seed${seed}"
+gpu_id=${5}
+num_episodes=${6:-50}  # Default to 50 if not provided
+
+exp_name=${task_name}_${num_episodes}demo_${seed}
+run_dir="data/outputs/${now:%Y.%m.%d}/${now:%H.%M.%S}_${exp_name}"
 
 
 # gpu_id=$(bash scripts/find_gpu.sh)

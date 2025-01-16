@@ -75,14 +75,14 @@ ema:
   max_value: 0.9999
 
 dataloader:
-  batch_size: 128
+  batch_size: 384
   num_workers: 8
   shuffle: True
   pin_memory: True
   persistent_workers: False
 
 val_dataloader:
-  batch_size: 128
+  batch_size: 384
   num_workers: 8
   shuffle: False
   pin_memory: True
@@ -114,10 +114,10 @@ training:
   tqdm_interval_sec: 1.0
 
 logging:
-  group: ${exp_name}
+  group: ${task_name}
   id: null
   mode: online
-  name: ${training.seed}
+  name: ${exp_name}
   project: dp3
   resume: true
   tags:
