@@ -17,8 +17,10 @@ seed=${4}
 gpu_id=${5}
 num_episodes=${6:-50}  # Default to 50 if not provided
 
+# Get current datetime
+now=$(date +"%Y.%m.%d/%H.%M.%S")
 exp_name=${task_name}_${num_episodes}demo_${seed}
-run_dir="data/outputs/${now:%Y.%m.%d}/${now:%H.%M.%S}_${exp_name}"
+run_dir="data/outputs/${now}_${exp_name}"
 
 
 # gpu_id=$(bash scripts/find_gpu.sh)
